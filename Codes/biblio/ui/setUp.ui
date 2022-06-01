@@ -6,24 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>540</width>
-    <height>616</height>
+    <width>640</width>
+    <height>748</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="modal">
-   <bool>true</bool>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/newPrefix/IHM/urneess.jpg);
+background-image: url(:/newPrefix/urnnne.jpg)</string>
   </property>
-  <widget class="QLabel" name="labelSetUp">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>40</y>
-     <width>131</width>
-     <height>31</height>
+     <x>80</x>
+     <y>70</y>
+     <width>521</width>
+     <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+alternate-background-color: rgb(93, 93, 93);
+background-color: rgb(113, 113, 113);
+font: 8pt &quot;Kristen ITC&quot;;
+font: 24pt &quot;Kristen ITC&quot;;
+</string>
    </property>
    <property name="text">
     <string>CREER UNE ELECTION</string>
@@ -32,13 +41,20 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>120</y>
+     <x>49</x>
+     <y>190</y>
      <width>451</width>
      <height>51</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>NOM DE L'ELECTION</string>
+      </property>
+     </widget>
+    </item>
     <item>
      <spacer name="verticalSpacer_2">
       <property name="orientation">
@@ -53,14 +69,11 @@
      </spacer>
     </item>
     <item>
-     <widget class="QLabel" name="labelNameVote">
-      <property name="text">
-       <string>NOM DE L'ELECTION</string>
+     <widget class="QLineEdit" name="lineEditNameVote">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
      </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEditNameVote"/>
     </item>
    </layout>
   </widget>
@@ -68,30 +81,37 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>210</y>
+     <y>290</y>
      <width>451</width>
      <height>51</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QLabel" name="labelDebut">
+     <widget class="QLabel" name="label_2">
       <property name="text">
        <string>DEBUT</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QDateTimeEdit" name="dateTimeEditDebut">
+     <widget class="QDateTimeEdit" name="dateTimeEditStart">
+      <property name="dateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2022</year>
+        <month>5</month>
+        <day>1</day>
+       </datetime>
+      </property>
       <property name="date">
        <date>
         <year>2022</year>
         <month>5</month>
         <day>1</day>
        </date>
-      </property>
-      <property name="calendarPopup">
-       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -109,26 +129,20 @@
      </spacer>
     </item>
     <item>
-     <widget class="QLabel" name="labelFin">
+     <widget class="QLabel" name="label_3">
       <property name="text">
        <string>FIN</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QDateTimeEdit" name="dateTimeEditFin">
-      <property name="dateTime">
-       <datetime>
-        <hour>0</hour>
-        <minute>0</minute>
-        <second>0</second>
+     <widget class="QDateTimeEdit" name="dateTimeEditEnd">
+      <property name="date">
+       <date>
         <year>2022</year>
         <month>7</month>
         <day>1</day>
-       </datetime>
-      </property>
-      <property name="calendarPopup">
-       <bool>true</bool>
+       </date>
       </property>
      </widget>
     </item>
@@ -138,14 +152,14 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>300</y>
+     <y>370</y>
      <width>451</width>
      <height>51</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_3">
     <item>
-     <widget class="QLabel" name="labelBDD">
+     <widget class="QLabel" name="label_5">
       <property name="text">
        <string>Disposer vous d'une base de donnée?</string>
       </property>
@@ -165,7 +179,7 @@
      </spacer>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBoxBDDNon">
+     <widget class="QCheckBox" name="checkBox">
       <property name="text">
        <string>NON</string>
       </property>
@@ -185,7 +199,7 @@
      </spacer>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBoxBDDOui">
+     <widget class="QCheckBox" name="checkBox_3">
       <property name="text">
        <string>OUI</string>
       </property>
@@ -197,14 +211,14 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>470</y>
+     <y>520</y>
      <width>451</width>
      <height>41</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
     <item>
-     <widget class="QLabel" name="labelSystemVote">
+     <widget class="QLabel" name="label_6">
       <property name="text">
        <string>Mode de scrutin</string>
       </property>
@@ -232,7 +246,7 @@
       </item>
       <item>
        <property name="text">
-        <string>JUGEMENT MAJORITAIRE</string>
+        <string>JUGEMENTMAJORITAIRE</string>
        </property>
       </item>
      </widget>
@@ -242,8 +256,8 @@
   <widget class="QPushButton" name="buttonSetUp">
    <property name="geometry">
     <rect>
-     <x>362</x>
-     <y>550</y>
+     <x>410</x>
+     <y>580</y>
      <width>141</width>
      <height>28</height>
     </rect>
@@ -255,13 +269,20 @@
   <widget class="QWidget" name="horizontalLayoutWidget_5">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>380</y>
+     <x>50</x>
+     <y>440</y>
      <width>451</width>
      <height>51</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Nom de la BDD</string>
+      </property>
+     </widget>
+    </item>
     <item>
      <spacer name="verticalSpacer_6">
       <property name="orientation">
@@ -276,18 +297,18 @@
      </spacer>
     </item>
     <item>
-     <widget class="QLabel" name="labelNameBDD">
-      <property name="text">
-       <string>NOM BDD</string>
+     <widget class="QLineEdit" name="lineEditNameVote_2">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
      </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEditNameBDD"/>
     </item>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="img/2.qrc"/>
+  <include location="img/3.qrc"/>
+ </resources>
  <connections/>
 </ui>

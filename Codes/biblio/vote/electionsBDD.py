@@ -9,19 +9,19 @@ import sqlite3 as sql
 from random import choices
 from string import *
 
-"""Module elections :
+"""module elections :
 
 Ce module permet la création d'une élection avec tous les outils dont elle a besoin.
-Il est composé de deux classes : Election et Bulletin
+Il est composé de plusieurs classes : Election, Bulletin, ...
 """
+
+
+def generation_mdp(length):
+    mdp = ""
+    return mdp.join(choices(ascii_letters + digits + punctuation, k=length))
+
 def initEtat(bdd):
-    """
-    Auteur : Jérémy LEMAITRE
-
-    Permet d'indiquer, pour tout les candidats, qu'ils n'ont pas votés. Ceci est réaliser lors de la création de l'élection.
-
-    """
-    con = sql.connect(bdd, uri=True)
+    con = sql.connect(bdd)
     cur = con.cursor()
     requete = "UPDATE Electeurs SET etat=0"
     cur.execute(requete)
@@ -30,21 +30,6 @@ def initEtat(bdd):
     con.close()
 
 def recupCandidats(bdd):
-    """
-    Auteur : Jérémy LEMAITRE
-
-    Permet de récupérer la liste des candidats en se connectant à une base de données.
-
-    Paramètres :
-    _______________
-        bdd : str
-            Nom de la base de données dont il faut récupérer les données.
-
-    Return :
-    _______________
-        candidatsList : list(str)
-            Noms des candidats à l'élection.
-    """
     con = sql.connect(bdd, uri=True)
     cur = con.cursor()
     requete_candidats = "SELECT nom FROM Candidats"
@@ -52,6 +37,48 @@ def recupCandidats(bdd):
     cur.close()
     con.close()
     return candidatsList
+
+
+
+class ListeElectorale():
+    def __init__(self, name):
+        self.__name = name
+        self.__bdd = sql.connect(os.path.join("", "bdd", "{}.db".format(self.__name)), uri=True)
+        self.__cursor = self.__bdd.cursor()
+        self.cursor.execute("""create table Electeurs(
+            id integer primary key autoincrement unique, 
+            prenom varchar(30), nom varchar(30) NOT NULL, 
+            mdp varchar(20) NOT NULL, 
+            contact varchar(80) NOT NULL, 
+            autorisation integer NOT NULL, 
+            etat integer NOT NULL);""")
+        self.__bdd.commit()
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def bdd(self):
+        return self.__bdd
+
+    @property
+    def cursor(self):
+        return self.__cursor
+
+    def ajout_electeur(self):
+        """
+        Auteur : Jérémy LEMAITRE
+        """
+        print("Renseignez un nouvel électeur :")
+        prenom = input("\n \t Prénom :")
+        nom = input("\n \t Nom :")
+        mdp = generation_mdp(18)
+        contact = input("\n \t Email :")
+        data = {"prenom": prenom, "nom": nom, "mdp": mdp, "contact": contact, "autorisation": 1, "etat": 0}
+        self.cursor.execute("""INSERT INTO Electeurs(prenom, nom, mdp, contact, autorisation, etat) VALUES(:prenom, 
+        :nom, :mdp, :contact, :autorisation, :etat)""", data)
+        self.__bdd.commit()
 
 
 class Election():
@@ -185,7 +212,7 @@ class Election():
         Returns
         ______________
         vainqueur : str
-            Le gagnant de l'élection ou les gagnants en cas d'égalité
+            Le gagnant de l'élection
         """
         vainqueur = self.scrutin.resultat(self.urne)
         print(vainqueur)
@@ -193,6 +220,13 @@ class Election():
             return vainqueur[0]
         else :
             return "L'élection n'a pas permis de déterminer un vainqueur. Les candidats {} arrivent à égalité".format(",".join(vainqueur))
+
+    def aff_resultats(self):
+        """
+        Méthode qui permet l'affichage des résulats de l'élection dans la console Python.
+        """
+        print("Le vainqueur de l'élection est {}.".format(self.depouillement()))
+        print("\t Pour plus d'information cliquer sur 'afficher les statistiques'.")
 
 
 class Bulletin():
@@ -235,28 +269,32 @@ class Bulletin():
     def bulletin(self):
         return self.__bulletin
 
+    def print_candidats(self):
+        """
+        Permet l'affichage des candidats que les électeurs peuvent renseigner sur leur bulletin.
+        """
+        print("Les candidats sont :\t")
+        for key in self.candidats_options.keys():
+            print(key, "--", self.candidats_options[key])
+
+    def print_options(self):
+        """
+        Permet l'affichage des différents choix de vote qui s'offrent aux candidats.
+        """
+        print("Les options de votes sont :\n")
+        for key in self.votes_options.keys():
+            print(key, "--", self.votes_options[key])
+
     def completeBulletin(self, candidat, vote):
         """
-        Auteur : Jérémy LEMAITRE
-
-        Ajoute un candidat et le vote qui lui est associé au bulletin de l'électeur.
-
-        Parameters :
-         ______________
-            candidat : str
-                Nom du candidat
-            vote : str or int
-                Vote qui lui a été associé
+        Itère le remplissage des lignes et demande à l'électeur s'il a fini de remplir son bulletin.
+        Sort de la fonction lorsque le bulletin est rempli
         """
         self.__bulletin[candidat] = vote
 
     def estvalide(self):
         """
-        Vérifie que le bulletin remplit bien les conditions de validité de l'élection en procédant à plusieurs tests :
-            La date de dépôt du bulletin est bien comprise entre les dates de début et de fin d'élection.
-            L'électeur est bien présent dans la base de données et a rentré le bon mot de passe.
-            Les candidats renseignés sur le bulletin appartiennent bien à la liste des candidats.
-            Les votes suivent bien le format défini par la méthode de vote.
+        Vérifie que le bulletin remplit bien les conditions de validité de l'élection en procédant à plusieurs tests.
 
         Returns
         _________
@@ -279,78 +317,6 @@ class Bulletin():
             con.close()
 
         return self.__valide
-
-def generation_mdp(length):
-    """
-    Auteur : Jérémy LEMAITRE
-
-    Permet de créer un mot de passe, d'une longueur donnée et composé de caractères ascii, de chiffres et de signes de ponctuation.
-
-    Parameters :
-        ______________
-        length : int
-            Nombre de caractère du mot de passe.
-
-    Returns :
-        ______________
-        mdp : str
-            Mot de passe créé
-    """
-    mdp = ""
-    return mdp.join(choices(ascii_letters + digits + punctuation, k=length))
-
-class ListeElectorale():
-    """
-    Auteur : Jérémy LEMAITRE
-
-    Description : Permet la gestion de la base données liste électorale
-
-    """
-
-    def __init__(self, name):
-        self.__name = name
-        self.__bdd = sql.connect(os.path.join("", "bdd", "{}.db".format(self.__name)), uri=True)
-        self.__cursor = self.__bdd.cursor()
-        self.cursor.execute("""create table Electeurs(
-            id integer primary key autoincrement unique, 
-            prenom varchar(30), nom varchar(30) NOT NULL, 
-            mdp varchar(20) NOT NULL, 
-            contact varchar(80) NOT NULL, 
-            autorisation integer NOT NULL, 
-            etat integer NOT NULL);""")
-        self.__bdd.commit()
-
-    @property
-    def name(self):
-        return self.__name
-
-    @property
-    def bdd(self):
-        return self.__bdd
-
-    @property
-    def cursor(self):
-        return self.__cursor
-
-    def ajout_electeur(self):
-        """
-        Auteur : Jérémy LEMAITRE
-
-        Cette fonction n'est pas fonctionnelle.
-
-        Entrer un nouvelle éléecteur dans la base de données.
-        """
-        print("Renseignez un nouvel électeur :")
-        prenom = input("\n \t Prénom :")
-        nom = input("\n \t Nom :")
-        mdp = generation_mdp(18)
-        contact = input("\n \t Email :")
-        data = {"prenom": prenom, "nom": nom, "mdp": mdp, "contact": contact, "autorisation": 1, "etat": 0}
-        self.cursor.execute("""INSERT INTO Electeurs(prenom, nom, mdp, contact, autorisation, etat) VALUES(:prenom, 
-        :nom, :mdp, :contact, :autorisation, :etat)""", data)
-        self.__bdd.commit()
-
-
 
 
 if __name__ == '__main__':

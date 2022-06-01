@@ -2,10 +2,7 @@ import numpy as np
 from abc import ABCMeta, abstractmethod
 
 class Scrutin(metaclass=ABCMeta):
-    """
-    Auteur : Sheick Simpore
 
-    """
     def __init__(self,candidats):
         self.candidats = candidats
 
@@ -97,7 +94,7 @@ class JugementMajoritaire(Scrutin):
     def votesautorises(self):
         return self.__votesautorises
 
-    def resultats_candidat(self, urne):
+    def resultats_candidat(self, bulletins):
         """
         Compte les votes des candidats et par mention
         retourne un dictionnaire ayant pour cle les noms
@@ -108,8 +105,8 @@ class JugementMajoritaire(Scrutin):
             candidat: {mention: 0 for mention in self.votesautorises}
             for candidat in self.candidats
         }
-        for bulletins in urne:
-            for candidat, mention in bulletins.bulletin.items():
+        for bulletin in bulletins:
+            for candidat, mention in bulletin.items():
                 resultats_par_candidat[candidat][mention] += 1
         return resultats_par_candidat
 
@@ -117,7 +114,6 @@ class JugementMajoritaire(Scrutin):
     def mention_majoritaire(self,resultats_par_candidat):
         resultat = {}
         for candidat, resultat1candidat in resultats_par_candidat.items():
-            print(resultat1candidat)
             votes_cumules = 0
             for note, compte_vote in enumerate(resultat1candidat):
                 votes_cumules += compte_vote

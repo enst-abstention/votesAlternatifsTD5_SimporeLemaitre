@@ -13,11 +13,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(639, 821)
-        Dialog.setModal(True)
+        Dialog.resize(638, 779)
         self.widget = QtWidgets.QWidget(Dialog)
-        self.widget.setGeometry(QtCore.QRect(-10, 0, 651, 825))
-        self.widget.setStyleSheet("")
+        self.widget.setGeometry(QtCore.QRect(0, 0, 640, 782))
+        self.widget.setStyleSheet("background-image: url(:/8/urnnne.jpg);")
         self.widget.setObjectName("widget")
         self.label_2 = QtWidgets.QLabel(self.widget)
         self.label_2.setGeometry(QtCore.QRect(400, 209, 331, 31))
@@ -40,157 +39,199 @@ class Ui_Dialog(object):
         self.label_5.setText("")
         self.label_5.setObjectName("label_5")
         self.label = QtWidgets.QLabel(self.widget)
-        self.label.setGeometry(QtCore.QRect(30, 90, 571, 41))
-        self.label.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
-"color: rgb(188, 0, 108);\n"
+        self.label.setGeometry(QtCore.QRect(30, 90, 551, 41))
+        self.label.setStyleSheet("color: rgb(0, 0, 0);\n"
+"alternate-background-color: rgb(93, 93, 93);\n"
+"background-color: rgb(113, 113, 113);\n"
+"font: 8pt \"Kristen ITC\";\n"
 "font: 24pt \"Kristen ITC\";\n"
 "")
         self.label.setObjectName("label")
         self.label_3 = QtWidgets.QLabel(self.widget)
-        self.label_3.setGeometry(QtCore.QRect(60, 140, 421, 31))
-        self.label_3.setStyleSheet("color: rgb(0, 0, 0);")
+        self.label_3.setGeometry(QtCore.QRect(220, 130, 151, 31))
+        self.label_3.setStyleSheet("color: rgb(0, 85, 0);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"font: 8pt \"Kristen ITC\";")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.widget)
         self.label_4.setGeometry(QtCore.QRect(40, 190, 181, 51))
-        self.label_4.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+        self.label_4.setStyleSheet("color: rgb(0, 85, 0);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"font: 8pt \"Kristen ITC\";")
+        self.label_4.setObjectName("label_4")
+        self.comboBoxC1 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC1.setGeometry(QtCore.QRect(72, 271, 91, 41))
+        self.comboBoxC1.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC1.setObjectName("comboBoxC1")
+        self.comboBoxC5 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC5.setGeometry(QtCore.QRect(260, 270, 101, 41))
+        self.comboBoxC5.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC5.setObjectName("comboBoxC5")
+        self.comboBoxC3 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC3.setGeometry(QtCore.QRect(480, 270, 111, 41))
+        self.comboBoxC3.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC3.setObjectName("comboBoxC3")
+        self.comboBoxC2 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC2.setGeometry(QtCore.QRect(70, 360, 91, 41))
+        self.comboBoxC2.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC2.setObjectName("comboBoxC2")
+        self.comboBoxC6 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC6.setGeometry(QtCore.QRect(260, 360, 101, 41))
+        self.comboBoxC6.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC6.setObjectName("comboBoxC6")
+        self.comboBoxC10 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC10.setGeometry(QtCore.QRect(480, 350, 111, 41))
+        self.comboBoxC10.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC10.setObjectName("comboBoxC10")
+        self.comboBoxC3_2 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC3_2.setGeometry(QtCore.QRect(70, 450, 91, 41))
+        self.comboBoxC3_2.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC3_2.setObjectName("comboBoxC3_2")
+        self.comboBoxC7 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC7.setGeometry(QtCore.QRect(260, 450, 101, 41))
+        self.comboBoxC7.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC7.setObjectName("comboBoxC7")
+        self.comboBoxC11 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC11.setGeometry(QtCore.QRect(480, 450, 111, 41))
+        self.comboBoxC11.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC11.setObjectName("comboBoxC11")
+        self.comboBoxC4 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC4.setGeometry(QtCore.QRect(70, 540, 91, 41))
+        self.comboBoxC4.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC4.setObjectName("comboBoxC4")
+        self.comboBoxC8 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC8.setGeometry(QtCore.QRect(260, 540, 101, 41))
+        self.comboBoxC8.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC8.setObjectName("comboBoxC8")
+        self.comboBoxC12 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC12.setGeometry(QtCore.QRect(480, 540, 111, 41))
+        self.comboBoxC12.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"background-color: rgb(52, 86, 127);")
+        self.comboBoxC12.setObjectName("comboBoxC12")
+        self.labelC1 = QtWidgets.QLabel(self.widget)
+        self.labelC1.setGeometry(QtCore.QRect(10, 280, 55, 16))
+        self.labelC1.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
 "color: rgb(188, 0, 108);\n"
 "font: 8pt \"Kristen ITC\";\n"
 "")
-        self.label_4.setObjectName("label_4")
-        self.comboBoxCandidat1 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat1.setGeometry(QtCore.QRect(100, 270, 91, 41))
-        self.comboBoxCandidat1.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat1.setObjectName("comboBoxCandidat1")
-        self.comboBoxCandidat1.addItem("")
-        self.comboBoxCandidat5 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat5.setGeometry(QtCore.QRect(300, 270, 101, 41))
-        self.comboBoxCandidat5.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat5.setObjectName("comboBoxCandidat5")
-        self.comboBoxCandidat5.addItem("")
-        self.comboBoxCandidat9 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat9.setGeometry(QtCore.QRect(510, 270, 111, 41))
-        self.comboBoxCandidat9.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat9.setObjectName("comboBoxCandidat9")
-        self.comboBoxCandidat9.addItem("")
-        self.comboBoxCandidat2 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat2.setGeometry(QtCore.QRect(100, 350, 91, 41))
-        self.comboBoxCandidat2.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat2.setObjectName("comboBoxCandidat2")
-        self.comboBoxCandidat2.addItem("")
-        self.comboBoxCandidat6 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat6.setGeometry(QtCore.QRect(300, 350, 101, 41))
-        self.comboBoxCandidat6.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat6.setObjectName("comboBoxCandidat6")
-        self.comboBoxCandidat6.addItem("")
-        self.comboBoxCandidat10 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat10.setGeometry(QtCore.QRect(510, 350, 111, 41))
-        self.comboBoxCandidat10.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat10.setObjectName("comboBoxCandidat10")
-        self.comboBoxCandidat10.addItem("")
-        self.comboBoxCandidat3 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat3.setGeometry(QtCore.QRect(100, 430, 91, 41))
-        self.comboBoxCandidat3.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat3.setObjectName("comboBoxCandidat3")
-        self.comboBoxCandidat3.addItem("")
-        self.comboBoxCandidat7 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat7.setGeometry(QtCore.QRect(300, 430, 101, 41))
-        self.comboBoxCandidat7.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat7.setObjectName("comboBoxCandidat7")
-        self.comboBoxCandidat7.addItem("")
-        self.comboBoxCandidat11 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat11.setGeometry(QtCore.QRect(510, 430, 111, 41))
-        self.comboBoxCandidat11.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat11.setObjectName("comboBoxCandidat11")
-        self.comboBoxCandidat11.addItem("")
-        self.comboBoxCandidat4 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat4.setGeometry(QtCore.QRect(100, 510, 91, 41))
-        self.comboBoxCandidat4.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat4.setObjectName("comboBoxCandidat4")
-        self.comboBoxCandidat4.addItem("")
-        self.comboBoxCandidat8 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat8.setGeometry(QtCore.QRect(300, 510, 101, 41))
-        self.comboBoxCandidat8.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat8.setObjectName("comboBoxCandidat8")
-        self.comboBoxCandidat8.addItem("")
-        self.comboBoxCandidat12 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxCandidat12.setGeometry(QtCore.QRect(510, 510, 111, 41))
-        self.comboBoxCandidat12.setStyleSheet("background-color: rgb(0, 85, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"background-color: rgb(52, 86, 127);")
-        self.comboBoxCandidat12.setObjectName("comboBoxCandidat12")
-        self.comboBoxCandidat12.addItem("")
+        self.labelC1.setObjectName("labelC1")
+        self.labelC2 = QtWidgets.QLabel(self.widget)
+        self.labelC2.setGeometry(QtCore.QRect(10, 370, 55, 20))
+        self.labelC2.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC2.setObjectName("labelC2")
+        self.labelC3 = QtWidgets.QLabel(self.widget)
+        self.labelC3.setGeometry(QtCore.QRect(10, 460, 55, 16))
+        self.labelC3.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC3.setObjectName("labelC3")
+        self.labelC4 = QtWidgets.QLabel(self.widget)
+        self.labelC4.setGeometry(QtCore.QRect(10, 550, 55, 16))
+        self.labelC4.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC4.setObjectName("labelC4")
+        self.labelC5 = QtWidgets.QLabel(self.widget)
+        self.labelC5.setGeometry(QtCore.QRect(210, 280, 41, 16))
+        self.labelC5.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC5.setObjectName("labelC5")
+        self.labelC6 = QtWidgets.QLabel(self.widget)
+        self.labelC6.setGeometry(QtCore.QRect(210, 370, 41, 20))
+        self.labelC6.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC6.setObjectName("labelC6")
+        self.labelC7 = QtWidgets.QLabel(self.widget)
+        self.labelC7.setGeometry(QtCore.QRect(210, 460, 41, 16))
+        self.labelC7.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC7.setObjectName("labelC7")
+        self.labelC8 = QtWidgets.QLabel(self.widget)
+        self.labelC8.setGeometry(QtCore.QRect(210, 550, 41, 16))
+        self.labelC8.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC8.setObjectName("labelC8")
+        self.labelC9 = QtWidgets.QLabel(self.widget)
+        self.labelC9.setGeometry(QtCore.QRect(420, 280, 41, 16))
+        self.labelC9.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC9.setObjectName("labelC9")
+        self.labelC10 = QtWidgets.QLabel(self.widget)
+        self.labelC10.setGeometry(QtCore.QRect(420, 360, 51, 16))
+        self.labelC10.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC10.setObjectName("labelC10")
+        self.labelC11 = QtWidgets.QLabel(self.widget)
+        self.labelC11.setGeometry(QtCore.QRect(410, 460, 55, 16))
+        self.labelC11.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC11.setObjectName("labelC11")
+        self.labelC12 = QtWidgets.QLabel(self.widget)
+        self.labelC12.setGeometry(QtCore.QRect(400, 550, 55, 16))
+        self.labelC12.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+"color: rgb(188, 0, 108);\n"
+"font: 8pt \"Kristen ITC\";\n"
+"")
+        self.labelC12.setObjectName("labelC12")
         self.buttonBack = QtWidgets.QPushButton(self.widget)
         self.buttonBack.setGeometry(QtCore.QRect(10, 10, 93, 28))
         self.buttonBack.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
-"color: rgb(188, 0, 108);\n"
+"color: rgb(0, 0, 0);\n"
 "font: 8pt \"Kristen ITC\";\n"
+"\n"
 "")
         self.buttonBack.setObjectName("buttonBack")
         self.buttonAVoter = QtWidgets.QPushButton(self.widget)
         self.buttonAVoter.setGeometry(QtCore.QRect(260, 660, 321, 28))
         self.buttonAVoter.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
-"color: rgb(188, 0, 108);\n"
+"font: 75 8pt \"MS Shell Dlg 2\";\n"
+"color: rgb(0, 0, 0);\n"
 "font: 8pt \"Kristen ITC\";\n"
+"\n"
 "")
         self.buttonAVoter.setObjectName("buttonAVoter")
-        self.textEditCandidat1 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat1.setGeometry(QtCore.QRect(20, 270, 71, 41))
-        self.textEditCandidat1.setObjectName("textEditCandidat1")
-        self.textEditCandidat5 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat5.setGeometry(QtCore.QRect(220, 270, 71, 41))
-        self.textEditCandidat5.setObjectName("textEditCandidat5")
-        self.textEditCandidat9 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat9.setGeometry(QtCore.QRect(430, 270, 71, 41))
-        self.textEditCandidat9.setObjectName("textEditCandidat9")
-        self.textEditCandidat2 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat2.setGeometry(QtCore.QRect(20, 350, 71, 41))
-        self.textEditCandidat2.setObjectName("textEditCandidat2")
-        self.textEditCandidat6 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat6.setGeometry(QtCore.QRect(220, 350, 71, 41))
-        self.textEditCandidat6.setObjectName("textEditCandidat6")
-        self.textEditCandidat10 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat10.setGeometry(QtCore.QRect(430, 350, 71, 41))
-        self.textEditCandidat10.setObjectName("textEditCandidat10")
-        self.textEditCandidat3 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat3.setGeometry(QtCore.QRect(20, 430, 71, 41))
-        self.textEditCandidat3.setObjectName("textEditCandidat3")
-        self.textEditCandidat7 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat7.setGeometry(QtCore.QRect(220, 430, 71, 41))
-        self.textEditCandidat7.setObjectName("textEditCandidat7")
-        self.textEditCandidat11 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat11.setGeometry(QtCore.QRect(430, 430, 71, 41))
-        self.textEditCandidat11.setObjectName("textEditCandidat11")
-        self.textEditCandidat12 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat12.setGeometry(QtCore.QRect(430, 510, 71, 41))
-        self.textEditCandidat12.setObjectName("textEditCandidat12")
-        self.textEditCandidat8 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat8.setGeometry(QtCore.QRect(220, 510, 71, 41))
-        self.textEditCandidat8.setObjectName("textEditCandidat8")
-        self.textEditCandidat4 = QtWidgets.QTextEdit(self.widget)
-        self.textEditCandidat4.setGeometry(QtCore.QRect(20, 510, 71, 41))
-        self.textEditCandidat4.setObjectName("textEditCandidat4")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -199,22 +240,23 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "Election Présidentielle 2022"))
-        self.label_3.setText(_translate("Dialog", "                                  Rank  your candidate"))
-        self.label_4.setText(_translate("Dialog", "Scrutin mode : condorcet"))
-        self.comboBoxCandidat1.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat5.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat9.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat2.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat6.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat10.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat3.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat7.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat11.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat4.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat8.setItemText(0, _translate("Dialog", "0"))
-        self.comboBoxCandidat12.setItemText(0, _translate("Dialog", "0"))
-        self.buttonBack.setText(_translate("Dialog", "Back"))
+        self.label_3.setText(_translate("Dialog", "Classez vos candidats"))
+        self.label_4.setText(_translate("Dialog", "Mode de scrutin : condorcet"))
+        self.labelC1.setText(_translate("Dialog", "        1"))
+        self.labelC2.setText(_translate("Dialog", "       2"))
+        self.labelC3.setText(_translate("Dialog", "        3"))
+        self.labelC4.setText(_translate("Dialog", "        4"))
+        self.labelC5.setText(_translate("Dialog", "       5"))
+        self.labelC6.setText(_translate("Dialog", "       6"))
+        self.labelC7.setText(_translate("Dialog", "        7"))
+        self.labelC8.setText(_translate("Dialog", "        8"))
+        self.labelC9.setText(_translate("Dialog", "       9"))
+        self.labelC10.setText(_translate("Dialog", "       10"))
+        self.labelC11.setText(_translate("Dialog", "        11"))
+        self.labelC12.setText(_translate("Dialog", "         12"))
+        self.buttonBack.setText(_translate("Dialog", "Retour "))
         self.buttonAVoter.setText(_translate("Dialog", "DEPOSER MON BULLETIN DANS L\'URNE"))
+import 8_rc
 
 
 if __name__ == "__main__":

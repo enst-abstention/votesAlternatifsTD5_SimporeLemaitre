@@ -6,31 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>640</width>
+    <height>748</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="labelConfirmation">
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/4/validess.jpg);</string>
+  </property>
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>120</y>
-     <width>151</width>
-     <height>20</height>
+     <x>50</x>
+     <y>220</y>
+     <width>521</width>
+     <height>61</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 85, 0);
+font: 8pt &quot;Kristen ITC&quot;;
+font: 24pt &quot;Kristen ITC&quot;;</string>
+   </property>
    <property name="text">
-    <string>L'election a bien été créée</string>
+    <string>L'election a bien été créer</string>
    </property>
   </widget>
   <widget class="QPushButton" name="buttonBackMain">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>220</y>
+     <x>480</x>
+     <y>430</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -40,6 +48,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="img/4.qrc"/>
+ </resources>
  <connections/>
 </ui>

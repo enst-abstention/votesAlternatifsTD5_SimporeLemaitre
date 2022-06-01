@@ -13,28 +13,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(413, 593)
-        Dialog.setModal(True)
+        Dialog.resize(642, 745)
         self.widget = QtWidgets.QWidget(Dialog)
-        self.widget.setGeometry(QtCore.QRect(0, 10, 410, 590))
-        self.widget.setStyleSheet("")
+        self.widget.setGeometry(QtCore.QRect(0, 0, 640, 748))
+        self.widget.setStyleSheet("background-image: url(:/5/validess.jpg);")
         self.widget.setObjectName("widget")
-        self.label_5 = QtWidgets.QLabel(self.widget)
-        self.label_5.setGeometry(QtCore.QRect(470, 430, 221, 20))
-        self.label_5.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 0, 0);\n"
-"color: rgb(255, 0, 0);")
-        self.label_5.setText("")
-        self.label_5.setObjectName("label_5")
-        self.pushButton = QtWidgets.QPushButton(self.widget)
-        self.pushButton.setGeometry(QtCore.QRect(390, 660, 93, 28))
-        self.pushButton.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
-"color: rgb(188, 0, 108);\n"
-"font: 8pt \"Kristen ITC\";\n"
-"")
-        self.pushButton.setObjectName("pushButton")
+        self.textEdit = QtWidgets.QTextEdit(self.widget)
+        self.textEdit.setGeometry(QtCore.QRect(170, 220, 271, 61))
+        self.textEdit.setObjectName("textEdit")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.widget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(50, 320, 301, 41))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(150, 430, 301, 41))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -47,9 +35,6 @@ class Ui_Dialog(object):
         self.buttonSubmit = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.buttonSubmit.setObjectName("buttonSubmit")
         self.horizontalLayout.addWidget(self.buttonSubmit)
-        self.label = QtWidgets.QLabel(self.widget)
-        self.label.setGeometry(QtCore.QRect(10, 70, 421, 101))
-        self.label.setObjectName("label")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -57,11 +42,16 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.pushButton.setText(_translate("Dialog", "Valider"))
+        self.textEdit.setHtml(_translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Vos votes ont été prises en compte.</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Une fois que vous cliquez sur valider,</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">vous ne pourrez plus les modifier.</span></p></body></html>"))
         self.buttonBack.setText(_translate("Dialog", "ANNULER"))
         self.buttonSubmit.setText(_translate("Dialog", "VALIDER"))
-        self.label.setText(_translate("Dialog", "Cliquez sur Valider pour confirmer vos votes.\n"
-"Attention, une fois validés, les votes ne pourront plus être modifiés."))
+import 5_rc
 
 
 if __name__ == "__main__":
