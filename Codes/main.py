@@ -19,6 +19,7 @@ import sys
 ## Variables d'application
 currentElection = False
 currentBulletin = False
+appreciation = 0
 
 def backMain1():
     confirmationSetUp.close()
@@ -86,20 +87,20 @@ def dispJugMajBulletin():
 
 
 def condorcetAVoter():
+    classement = []
     for i in range(len(currentElection.candidats)):
-        classement = 0
-        instruction = "classement = int(uiCondorcetBulletin.comboBoxCandidat{}.currentText())".format(i, i+1)
+        instruction = "classement.append(int(uiCondorcetBulletin.comboBoxCandidat{}.currentText()))".format(i+1)
         exec(instruction)
-        currentBulletin.completeBulletin(currentElection.candidats[i], classement)
+        currentBulletin.completeBulletin(currentElection.candidats[i], classement[i])
     condorcetBulletin.hide()
     confirmationVote.show()
 
 def jugMajAVoter():
+    appreciation = []
     for i in range(len(currentElection.candidats)):
-        appreciation = "A rejeter"
-        instruction = "appreciation = uiJugMajBulletin.comboBoxCandidat{}.currentText()".format(i+1)
+        instruction = "appreciation.append(uiJugMajBulletin.comboBoxCandidat{}.currentText())".format(i+1)
         exec(instruction)
-        currentBulletin.completeBulletin(currentElection.candidats[i], appreciation)
+        currentBulletin.completeBulletin(currentElection.candidats[i], appreciation[i])
     jugMajBulletin.hide()
     confirmationVote.show()
 
