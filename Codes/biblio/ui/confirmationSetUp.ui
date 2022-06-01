@@ -13,14 +13,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-image: url(:/4/validess.jpg);</string>
-  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>220</y>
+     <x>40</x>
+     <y>320</y>
      <width>521</width>
      <height>61</height>
     </rect>
@@ -28,7 +25,9 @@
    <property name="styleSheet">
     <string notr="true">color: rgb(0, 85, 0);
 font: 8pt &quot;Kristen ITC&quot;;
-font: 24pt &quot;Kristen ITC&quot;;</string>
+font: 24pt &quot;Kristen ITC&quot;;
+background-color: rgb(170, 255, 127);
+border-color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>L'election a bien été créer</string>
@@ -48,8 +47,6 @@ font: 24pt &quot;Kristen ITC&quot;;</string>
    </property>
   </widget>
  </widget>
- <resources>
-  <include location="img/4.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

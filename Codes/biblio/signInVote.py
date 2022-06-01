@@ -14,8 +14,6 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(640, 748)
-        Dialog.setStyleSheet("background-image: url(:/9/IHM/urneess.jpg);\n"
-"background-image: url(:/9/urneess.jpg);")
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(140, 40, 271, 51))
         self.label.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
@@ -38,7 +36,7 @@ class Ui_Dialog(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.lineEditIdElec = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.lineEditIdElec.setStyleSheet("color: rgb(255, 255, 255);")
+        self.lineEditIdElec.setStyleSheet("color: rgb(0, 0, 0);")
         self.lineEditIdElec.setInputMethodHints(QtCore.Qt.ImhEmailCharactersOnly)
         self.lineEditIdElec.setText("")
         self.lineEditIdElec.setObjectName("lineEditIdElec")
@@ -50,7 +48,7 @@ class Ui_Dialog(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.lineEditMdp = QtWidgets.QLineEdit(self.horizontalLayoutWidget_2)
-        self.lineEditMdp.setStyleSheet("color: rgb(255, 255, 255);")
+        self.lineEditMdp.setStyleSheet("color: rgb(0, 0, 0);")
         self.lineEditMdp.setInputMethodHints(QtCore.Qt.ImhDigitsOnly|QtCore.Qt.ImhNoAutoUppercase|QtCore.Qt.ImhNoPredictiveText|QtCore.Qt.ImhSensitiveData)
         self.lineEditMdp.setEchoMode(QtWidgets.QLineEdit.PasswordEchoOnEdit)
         self.lineEditMdp.setObjectName("lineEditMdp")
@@ -74,7 +72,6 @@ class Ui_Dialog(object):
         self.label_3.setText(_translate("Dialog", "Identifiant"))
         self.label_6.setText(_translate("Dialog", "Mot de passe"))
         self.buttonBulletin.setText(_translate("Dialog", "CONTINUER"))
-import 9_rc
 
 
 if __name__ == "__main__":

@@ -1,5 +1,0 @@
-<RCC>
-  <qresource prefix="newPrefix">
-    <file>../IHM/urneess.jpg</file>
-  </qresource>
-</RCC>

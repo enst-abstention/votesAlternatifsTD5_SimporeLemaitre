@@ -70,8 +70,6 @@ font: 20pt &quot;Kristen ITC&quot;;
    </property>
   </widget>
  </widget>
- <resources>
-  <include location="img/6.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

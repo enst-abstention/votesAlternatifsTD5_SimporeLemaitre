@@ -42,7 +42,6 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "RESULTATS DES ELECTIONS"))
         self.lineEdit.setText(_translate("Dialog", "Le vainqueur de l\'élection est :"))
-import 6_rc
 
 
 if __name__ == "__main__":

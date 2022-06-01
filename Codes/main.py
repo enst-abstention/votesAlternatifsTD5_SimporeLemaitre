@@ -39,7 +39,7 @@ def dispConfirmationSetUp():
     setUp.close()
     global currentElection
     nom = uiSetUp.lineEditNameVote.text()
-    dates = (uiSetUp.dateTimeEditDebut.dateTime().toPyDateTime(),uiSetUp.dateTimeEditFin.dateTime().toPyDateTime())
+    dates = (uiSetUp.dateTimeEditStart.dateTime().toPyDateTime(),uiSetUp.dateTimeEditEnd.dateTime().toPyDateTime())
     electionBDD = uiSetUp.lineEditNameBDD.text()
     mode = uiSetUp.comboBoxSystemVote.currentText()
     currentElection = Election(nom, dates, electionBDD, mode)
@@ -69,18 +69,18 @@ def dispBulletin():
 def dispCondorcetBulletin():
     if not currentElection.urne :
         for i in range(1,len(currentElection.candidats) + 1) :
-            instruction = "uiCondorcetBulletin.textEditCandidat{}.setText(currentElection.candidats[i-1])".format(i)
+            instruction = "uiCondorcetBulletin.labelC{}.setText(currentElection.candidats[i-1])".format(i)
             exec(instruction)
-            instruction = "uiCondorcetBulletin.comboBoxCandidat{}.addItems(currentElection.scrutin.votesautorises)".format(i)
+            instruction = "uiCondorcetBulletin.comboBoxC{}.addItems(currentElection.scrutin.votesautorises)".format(i)
             exec(instruction)
     condorcetBulletin.show()
 
 def dispJugMajBulletin():
     if not currentElection.urne :
         for i in range(1,len(currentElection.candidats) + 1) :
-            instruction = "uiJugMajBulletin.textEditCandidat{}.setText(currentElection.candidats[i-1])".format(i)
+            instruction = "uiJugMajBulletin.labelC{}.setText(currentElection.candidats[i-1])".format(i)
             exec(instruction)
-            instruction2 = "uiJugMajBulletin.comboBoxCandidat{}.addItems(currentElection.scrutin.votesautorises)".format(i)
+            instruction2 = "uiJugMajBulletin.comboBoxC{}.addItems(currentElection.scrutin.votesautorises)".format(i)
             exec(instruction2)
     jugMajBulletin.show()
 
@@ -88,7 +88,7 @@ def dispJugMajBulletin():
 def condorcetAVoter():
     for i in range(len(currentElection.candidats)):
         classement = 0
-        instruction = "classement = int(uiCondorcetBulletin.comboBoxCandidat{}.currentText())".format(i, i+1)
+        instruction = "classement = int(uiCondorcetBulletin.comboBoxC{}.currentText())".format(i, i+1)
         exec(instruction)
         currentBulletin.completeBulletin(currentElection.candidats[i], classement)
     condorcetBulletin.hide()
@@ -97,7 +97,7 @@ def condorcetAVoter():
 def jugMajAVoter():
     for i in range(len(currentElection.candidats)):
         appreciation = "A rejeter"
-        instruction = "appreciation = uiJugMajBulletin.comboBoxCandidat{}.currentText()".format(i+1)
+        instruction = "appreciation = uiJugMajBulletin.comboBoxC{}.currentText()".format(i+1)
         exec(instruction)
         currentBulletin.completeBulletin(currentElection.candidats[i], appreciation)
     jugMajBulletin.hide()
@@ -123,34 +123,80 @@ def dispResults():
 app = QtWidgets.QApplication(sys.argv)
 
 MainWindow = QtWidgets.QMainWindow()
+MainWindow.setStyleSheet("""
+    background-image: url(biblio/ui/img/urneess.jpg);
+    """)
 ui = Ui_MainWindow()
 ui.setupUi(MainWindow)
 
 setUp = QtWidgets.QDialog()
+setUp.setStyleSheet("""
+    .QDialog{
+    background-image: url(biblio/ui/img/urneess.jpg);
+    background-position: center;
+    }
+    """)
 uiSetUp = setUpDialog()
 uiSetUp.setupUi(setUp)
 
 confirmationSetUp = QtWidgets.QDialog()
+confirmationSetUp.setStyleSheet("""
+    .QDialog{
+    background-image: url(biblio/ui/img/validess.jpg);
+    background-position: center;
+    }
+    """)
 uiConfirmationSetUp = confirmationSetUpDialog()
 uiConfirmationSetUp.setupUi(confirmationSetUp)
 
 signInVote = QtWidgets.QDialog()
+signInVote.setStyleSheet("""
+    .QDialog{
+    background-image: url(biblio/ui/img/urneess.jpg);
+    background-position: center;
+    }
+    """)
 uiSignInVote = signInVoteDialog()
 uiSignInVote.setupUi(signInVote)
 
 condorcetBulletin = QtWidgets.QDialog()
+condorcetBulletin.setStyleSheet("""
+    .QDialog{
+    background-image: url(biblio/ui/img/urnnne.jpg);
+    background-position: center;
+    }
+    """)
 uiCondorcetBulletin = condorcetBulletinDialog()
 uiCondorcetBulletin.setupUi(condorcetBulletin)
 
 jugMajBulletin = QtWidgets.QDialog()
+
+jugMajBulletin.setStyleSheet("""
+    .QDialog{
+    background-image: url(biblio/ui/img/urnnne.jpg);
+    background-position: center;
+    }
+    """)
 uiJugMajBulletin = jugMajBulletinDialog()
 uiJugMajBulletin.setupUi(jugMajBulletin)
 
 confirmationVote = QtWidgets.QDialog()
+confirmationVote.setStyleSheet("""
+.QDialog{
+    background-image: url(biblio/ui/img/validess.jpg);
+    background-position: center;
+    }
+    """)
 uiConfirmationVote = confirmationVoteDialog()
 uiConfirmationVote.setupUi(confirmationVote)
 
 results = QtWidgets.QDialog()
+results.setStyleSheet("""
+    .QDialog{
+    background-image: url(biblio/ui/img/validess.jpg);
+    background-position: center;
+    }
+    """)
 uiResults = resultsDialog()
 uiResults.setupUi(results)
 

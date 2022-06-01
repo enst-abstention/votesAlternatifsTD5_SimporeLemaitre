@@ -14,12 +14,13 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(640, 748)
-        Dialog.setStyleSheet("background-image: url(:/4/validess.jpg);")
         self.label = QtWidgets.QLabel(Dialog)
-        self.label.setGeometry(QtCore.QRect(50, 220, 521, 61))
+        self.label.setGeometry(QtCore.QRect(40, 320, 521, 61))
         self.label.setStyleSheet("color: rgb(0, 85, 0);\n"
 "font: 8pt \"Kristen ITC\";\n"
-"font: 24pt \"Kristen ITC\";")
+"font: 24pt \"Kristen ITC\";\n"
+"background-color: rgb(170, 255, 127);\n"
+"border-color: rgb(0, 0, 0);")
         self.label.setObjectName("label")
         self.buttonBackMain = QtWidgets.QPushButton(Dialog)
         self.buttonBackMain.setGeometry(QtCore.QRect(480, 430, 93, 28))
@@ -33,7 +34,6 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "L\'election a bien été créer"))
         self.buttonBackMain.setText(_translate("Dialog", "CONTINUER"))
-import 4_rc
 
 
 if __name__ == "__main__":

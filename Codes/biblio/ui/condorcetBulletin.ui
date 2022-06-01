@@ -22,33 +22,6 @@
      <height>782</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/8/urnnne.jpg);</string>
-   </property>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>209</y>
-      <width>331</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 italic 8pt &quot;Rockwell&quot;;
-color: rgb(255, 255, 255);
-color: rgb(255, 255, 255);
-font: 75 italic 8pt &quot;Arial Nova Cond&quot;;
-gridline-color: rgb(200, 89, 189);
-color: rgb(0, 0, 255);
-color: rgb(170, 0, 0);
-color: rgb(85, 170, 255);
-color: rgb(255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
@@ -154,7 +127,7 @@ background-color: rgb(0, 0, 0);
 background-color: rgb(52, 86, 127);</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBoxC3">
+   <widget class="QComboBox" name="comboBoxC9">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -214,7 +187,7 @@ background-color: rgb(0, 0, 0);
 background-color: rgb(52, 86, 127);</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBoxC3_2">
+   <widget class="QComboBox" name="comboBoxC3">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -575,8 +548,6 @@ font: 8pt &quot;Kristen ITC&quot;;
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="img/8.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

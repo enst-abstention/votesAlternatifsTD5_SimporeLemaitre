@@ -16,7 +16,6 @@ class Ui_Dialog(object):
         Dialog.resize(639, 824)
         self.widget = QtWidgets.QWidget(Dialog)
         self.widget.setGeometry(QtCore.QRect(0, 0, 640, 825))
-        self.widget.setStyleSheet("background-image: url(:/7/urnnne.jpg);")
         self.widget.setObjectName("widget")
         self.label_5 = QtWidgets.QLabel(self.widget)
         self.label_5.setGeometry(QtCore.QRect(470, 430, 221, 20))
@@ -217,14 +216,14 @@ class Ui_Dialog(object):
 "font: 8pt \"Kristen ITC\";\n"
 "")
         self.buttonBack.setObjectName("buttonBack")
-        self.pushButton_2 = QtWidgets.QPushButton(self.widget)
-        self.pushButton_2.setGeometry(QtCore.QRect(230, 660, 301, 28))
-        self.pushButton_2.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
+        self.buttonAVoter = QtWidgets.QPushButton(self.widget)
+        self.buttonAVoter.setGeometry(QtCore.QRect(230, 660, 301, 28))
+        self.buttonAVoter.setStyleSheet("font: 8pt \"Kristen ITC\";\n"
 "font: 75 8pt \"MS Shell Dlg 2\";\n"
 "color: rgb(0, 0, 0);\n"
 "font: 8pt \"Kristen ITC\";\n"
 "")
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.buttonAVoter.setObjectName("buttonAVoter")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -248,8 +247,7 @@ class Ui_Dialog(object):
         self.labelC11.setText(_translate("Dialog", "        c11"))
         self.labelC12.setText(_translate("Dialog", "         c12"))
         self.buttonBack.setText(_translate("Dialog", "Retour"))
-        self.pushButton_2.setText(_translate("Dialog", "DEPOSER MON BULLETIN DANS L\'URNE"))
-import 7_rc
+        self.buttonAVoter.setText(_translate("Dialog", "DEPOSER MON BULLETIN DANS L\'URNE"))
 
 
 if __name__ == "__main__":

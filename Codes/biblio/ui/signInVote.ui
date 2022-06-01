@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-image: url(:/9/IHM/urneess.jpg);
-background-image: url(:/9/urneess.jpg);</string>
-  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -81,7 +77,7 @@ font: 8pt &quot;Kristen ITC&quot;;</string>
     <item>
      <widget class="QLineEdit" name="lineEditIdElec">
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true">color: rgb(0, 0, 0);</string>
       </property>
       <property name="inputMethodHints">
        <set>Qt::ImhEmailCharactersOnly</set>
@@ -106,7 +102,7 @@ font: 8pt &quot;Kristen ITC&quot;;</string>
     <item>
      <widget class="QLineEdit" name="lineEditMdp">
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true">color: rgb(0, 0, 0);</string>
       </property>
       <property name="inputMethodHints">
        <set>Qt::ImhDigitsOnly|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
@@ -148,8 +144,6 @@ font: 8pt &quot;Kristen ITC&quot;;</string>
    </property>
   </widget>
  </widget>
- <resources>
-  <include location="img/9.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

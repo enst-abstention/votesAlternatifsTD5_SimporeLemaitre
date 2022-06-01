@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-image: url(:/newPrefix/IHM/urneess.jpg);
-background-image: url(:/newPrefix/urnnne.jpg)</string>
-  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -71,7 +67,7 @@ font: 24pt &quot;Kristen ITC&quot;;
     <item>
      <widget class="QLineEdit" name="lineEditNameVote">
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true">color: rgb(0, 0, 0);</string>
       </property>
      </widget>
     </item>
@@ -113,6 +109,9 @@ font: 24pt &quot;Kristen ITC&quot;;
         <day>1</day>
        </date>
       </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
@@ -143,6 +142,9 @@ font: 24pt &quot;Kristen ITC&quot;;
         <month>7</month>
         <day>1</day>
        </date>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -297,18 +299,15 @@ font: 24pt &quot;Kristen ITC&quot;;
      </spacer>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEditNameVote_2">
+     <widget class="QLineEdit" name="lineEditNameBDD">
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true">color: rgb(0, 0, 0);</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="img/2.qrc"/>
-  <include location="img/3.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

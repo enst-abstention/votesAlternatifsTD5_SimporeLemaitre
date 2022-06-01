@@ -14,8 +14,6 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(640, 748)
-        Dialog.setStyleSheet("background-image: url(:/newPrefix/IHM/urneess.jpg);\n"
-"background-image: url(:/newPrefix/urnnne.jpg)")
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(80, 70, 521, 51))
         self.label.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -37,7 +35,7 @@ class Ui_Dialog(object):
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.horizontalLayout.addItem(spacerItem)
         self.lineEditNameVote = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.lineEditNameVote.setStyleSheet("color: rgb(255, 255, 255);")
+        self.lineEditNameVote.setStyleSheet("color: rgb(0, 0, 0);")
         self.lineEditNameVote.setObjectName("lineEditNameVote")
         self.horizontalLayout.addWidget(self.lineEditNameVote)
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(Dialog)
@@ -52,6 +50,7 @@ class Ui_Dialog(object):
         self.dateTimeEditStart = QtWidgets.QDateTimeEdit(self.horizontalLayoutWidget_2)
         self.dateTimeEditStart.setDateTime(QtCore.QDateTime(QtCore.QDate(2022, 5, 1), QtCore.QTime(0, 0, 0)))
         self.dateTimeEditStart.setDate(QtCore.QDate(2022, 5, 1))
+        self.dateTimeEditStart.setCalendarPopup(True)
         self.dateTimeEditStart.setObjectName("dateTimeEditStart")
         self.horizontalLayout_2.addWidget(self.dateTimeEditStart)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -61,6 +60,7 @@ class Ui_Dialog(object):
         self.horizontalLayout_2.addWidget(self.label_3)
         self.dateTimeEditEnd = QtWidgets.QDateTimeEdit(self.horizontalLayoutWidget_2)
         self.dateTimeEditEnd.setDate(QtCore.QDate(2022, 7, 1))
+        self.dateTimeEditEnd.setCalendarPopup(True)
         self.dateTimeEditEnd.setObjectName("dateTimeEditEnd")
         self.horizontalLayout_2.addWidget(self.dateTimeEditEnd)
         self.horizontalLayoutWidget_3 = QtWidgets.QWidget(Dialog)
@@ -112,10 +112,10 @@ class Ui_Dialog(object):
         self.horizontalLayout_5.addWidget(self.label_7)
         spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.horizontalLayout_5.addItem(spacerItem5)
-        self.lineEditNameVote_2 = QtWidgets.QLineEdit(self.horizontalLayoutWidget_5)
-        self.lineEditNameVote_2.setStyleSheet("color: rgb(255, 255, 255);")
-        self.lineEditNameVote_2.setObjectName("lineEditNameVote_2")
-        self.horizontalLayout_5.addWidget(self.lineEditNameVote_2)
+        self.lineEditNameBDD = QtWidgets.QLineEdit(self.horizontalLayoutWidget_5)
+        self.lineEditNameBDD.setStyleSheet("color: rgb(0, 0, 0);")
+        self.lineEditNameBDD.setObjectName("lineEditNameBDD")
+        self.horizontalLayout_5.addWidget(self.lineEditNameBDD)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -135,8 +135,6 @@ class Ui_Dialog(object):
         self.comboBoxSystemVote.setItemText(1, _translate("Dialog", "JUGEMENTMAJORITAIRE"))
         self.buttonSetUp.setText(_translate("Dialog", "CREER L\'ELECTION"))
         self.label_7.setText(_translate("Dialog", "Nom de la BDD"))
-import 2_rc
-import 3_rc
 
 
 if __name__ == "__main__":

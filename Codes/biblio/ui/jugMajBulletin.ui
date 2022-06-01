@@ -22,9 +22,6 @@
      <height>825</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/7/urnnne.jpg);</string>
-   </property>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
@@ -535,7 +532,7 @@ font: 8pt &quot;Kristen ITC&quot;;
      <string>Retour</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="buttonAVoter">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -557,8 +554,6 @@ font: 8pt &quot;Kristen ITC&quot;;
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="img/7.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

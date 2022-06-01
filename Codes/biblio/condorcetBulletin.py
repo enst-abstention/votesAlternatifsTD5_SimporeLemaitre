@@ -16,21 +16,7 @@ class Ui_Dialog(object):
         Dialog.resize(638, 779)
         self.widget = QtWidgets.QWidget(Dialog)
         self.widget.setGeometry(QtCore.QRect(0, 0, 640, 782))
-        self.widget.setStyleSheet("background-image: url(:/8/urnnne.jpg);")
         self.widget.setObjectName("widget")
-        self.label_2 = QtWidgets.QLabel(self.widget)
-        self.label_2.setGeometry(QtCore.QRect(400, 209, 331, 31))
-        self.label_2.setStyleSheet("font: 75 italic 8pt \"Rockwell\";\n"
-"color: rgb(255, 255, 255);\n"
-"color: rgb(255, 255, 255);\n"
-"font: 75 italic 8pt \"Arial Nova Cond\";\n"
-"gridline-color: rgb(200, 89, 189);\n"
-"color: rgb(0, 0, 255);\n"
-"color: rgb(170, 0, 0);\n"
-"color: rgb(85, 170, 255);\n"
-"color: rgb(255, 255, 0);")
-        self.label_2.setText("")
-        self.label_2.setObjectName("label_2")
         self.label_5 = QtWidgets.QLabel(self.widget)
         self.label_5.setGeometry(QtCore.QRect(470, 430, 221, 20))
         self.label_5.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
@@ -71,12 +57,12 @@ class Ui_Dialog(object):
 "background-color: rgb(0, 0, 0);\n"
 "background-color: rgb(52, 86, 127);")
         self.comboBoxC5.setObjectName("comboBoxC5")
-        self.comboBoxC3 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxC3.setGeometry(QtCore.QRect(480, 270, 111, 41))
-        self.comboBoxC3.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+        self.comboBoxC9 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC9.setGeometry(QtCore.QRect(480, 270, 111, 41))
+        self.comboBoxC9.setStyleSheet("background-color: rgb(0, 85, 255);\n"
 "background-color: rgb(0, 0, 0);\n"
 "background-color: rgb(52, 86, 127);")
-        self.comboBoxC3.setObjectName("comboBoxC3")
+        self.comboBoxC9.setObjectName("comboBoxC9")
         self.comboBoxC2 = QtWidgets.QComboBox(self.widget)
         self.comboBoxC2.setGeometry(QtCore.QRect(70, 360, 91, 41))
         self.comboBoxC2.setStyleSheet("background-color: rgb(0, 85, 255);\n"
@@ -95,12 +81,12 @@ class Ui_Dialog(object):
 "background-color: rgb(0, 0, 0);\n"
 "background-color: rgb(52, 86, 127);")
         self.comboBoxC10.setObjectName("comboBoxC10")
-        self.comboBoxC3_2 = QtWidgets.QComboBox(self.widget)
-        self.comboBoxC3_2.setGeometry(QtCore.QRect(70, 450, 91, 41))
-        self.comboBoxC3_2.setStyleSheet("background-color: rgb(0, 85, 255);\n"
+        self.comboBoxC3 = QtWidgets.QComboBox(self.widget)
+        self.comboBoxC3.setGeometry(QtCore.QRect(70, 450, 91, 41))
+        self.comboBoxC3.setStyleSheet("background-color: rgb(0, 85, 255);\n"
 "background-color: rgb(0, 0, 0);\n"
 "background-color: rgb(52, 86, 127);")
-        self.comboBoxC3_2.setObjectName("comboBoxC3_2")
+        self.comboBoxC3.setObjectName("comboBoxC3")
         self.comboBoxC7 = QtWidgets.QComboBox(self.widget)
         self.comboBoxC7.setGeometry(QtCore.QRect(260, 450, 101, 41))
         self.comboBoxC7.setStyleSheet("background-color: rgb(0, 85, 255);\n"
@@ -256,7 +242,6 @@ class Ui_Dialog(object):
         self.labelC12.setText(_translate("Dialog", "         12"))
         self.buttonBack.setText(_translate("Dialog", "Retour "))
         self.buttonAVoter.setText(_translate("Dialog", "DEPOSER MON BULLETIN DANS L\'URNE"))
-import 8_rc
 
 
 if __name__ == "__main__":

@@ -16,10 +16,9 @@ class Ui_Dialog(object):
         Dialog.resize(642, 745)
         self.widget = QtWidgets.QWidget(Dialog)
         self.widget.setGeometry(QtCore.QRect(0, 0, 640, 748))
-        self.widget.setStyleSheet("background-image: url(:/5/validess.jpg);")
         self.widget.setObjectName("widget")
         self.textEdit = QtWidgets.QTextEdit(self.widget)
-        self.textEdit.setGeometry(QtCore.QRect(170, 220, 271, 61))
+        self.textEdit.setGeometry(QtCore.QRect(100, 290, 401, 111))
         self.textEdit.setObjectName("textEdit")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.widget)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(150, 430, 301, 41))
@@ -46,12 +45,12 @@ class Ui_Dialog(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Vos votes ont été prises en compte.</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Une fois que vous cliquez sur valider,</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">vous ne pourrez plus les modifier.</span></p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Vos votes ont été prises en compte.</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Après avoir cliqué sur valider,</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">vous ne pourrez plus les modifier.</span></p></body></html>"))
         self.buttonBack.setText(_translate("Dialog", "ANNULER"))
         self.buttonSubmit.setText(_translate("Dialog", "VALIDER"))
-import 5_rc
 
 
 if __name__ == "__main__":
