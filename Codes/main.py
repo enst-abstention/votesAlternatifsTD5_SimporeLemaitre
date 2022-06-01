@@ -19,6 +19,7 @@ import sys
 ## Variables d'application
 currentElection = False
 currentBulletin = False
+appreciation = 0
 
 def backMain1():
     confirmationSetUp.close()
@@ -36,13 +37,13 @@ def dispSetUp():
     setUp.show()
 
 def dispConfirmationSetUp():
-    setUp.close()
     global currentElection
     nom = uiSetUp.lineEditNameVote.text()
     dates = (uiSetUp.dateTimeEditStart.dateTime().toPyDateTime(),uiSetUp.dateTimeEditEnd.dateTime().toPyDateTime())
     electionBDD = uiSetUp.lineEditNameBDD.text()
     mode = uiSetUp.comboBoxSystemVote.currentText()
     currentElection = Election(nom, dates, electionBDD, mode)
+    setUp.close()
     confirmationSetUp.show()
 
 
@@ -86,20 +87,20 @@ def dispJugMajBulletin():
 
 
 def condorcetAVoter():
+    classement = []
     for i in range(len(currentElection.candidats)):
-        classement = 0
-        instruction = "classement = int(uiCondorcetBulletin.comboBoxC{}.currentText())".format(i, i+1)
+        instruction = "classement.append(int(uiCondorcetBulletin.comboBoxC{}.currentText()))".format(i+1)
         exec(instruction)
-        currentBulletin.completeBulletin(currentElection.candidats[i], classement)
+        currentBulletin.completeBulletin(currentElection.candidats[i], classement[i])
     condorcetBulletin.hide()
     confirmationVote.show()
 
 def jugMajAVoter():
+    appreciation = []
     for i in range(len(currentElection.candidats)):
-        appreciation = "A rejeter"
-        instruction = "appreciation = uiJugMajBulletin.comboBoxC{}.currentText()".format(i+1)
+        instruction = "appreciation.append(uiJugMajBulletin.comboBoxC{}.currentText())".format(i+1)
         exec(instruction)
-        currentBulletin.completeBulletin(currentElection.candidats[i], appreciation)
+        currentBulletin.completeBulletin(currentElection.candidats[i], appreciation[i])
     jugMajBulletin.hide()
     confirmationVote.show()
 
@@ -112,7 +113,7 @@ def backBulletin():
 def dispResults():
     if currentElection and currentElection.urne :
         vainqueur = currentElection.depouillement()
-        uiResults.textEditResult.setText(vainqueur)
+        uiResults.textEditResults.setText(vainqueur)
         results.show()
     elif currentElection :
         print("Personne n'a voté, l'urne est vide !")
@@ -123,16 +124,19 @@ def dispResults():
 app = QtWidgets.QApplication(sys.argv)
 
 MainWindow = QtWidgets.QMainWindow()
-MainWindow.setStyleSheet("""
-    background-image: url(biblio/ui/img/urneess.jpg);
-    """)
 ui = Ui_MainWindow()
 ui.setupUi(MainWindow)
+MainWindow.setStyleSheet("""
+    .QMainWindow{ 
+    background-image: url(biblio/ui/img/urneess.jpg);
+    background-position: center;
+    }   
+    """)
 
 setUp = QtWidgets.QDialog()
 setUp.setStyleSheet("""
     .QDialog{
-    background-image: url(biblio/ui/img/urneess.jpg);
+    background-image: url(biblio/ui/img/urnnne.jpg);
     background-position: center;
     }
     """)
@@ -140,8 +144,7 @@ uiSetUp = setUpDialog()
 uiSetUp.setupUi(setUp)
 
 confirmationSetUp = QtWidgets.QDialog()
-confirmationSetUp.setStyleSheet("""
-    .QDialog{
+confirmationSetUp.setStyleSheet(""".QDialog{
     background-image: url(biblio/ui/img/validess.jpg);
     background-position: center;
     }
@@ -150,8 +153,7 @@ uiConfirmationSetUp = confirmationSetUpDialog()
 uiConfirmationSetUp.setupUi(confirmationSetUp)
 
 signInVote = QtWidgets.QDialog()
-signInVote.setStyleSheet("""
-    .QDialog{
+signInVote.setStyleSheet(""".QDialog{
     background-image: url(biblio/ui/img/urneess.jpg);
     background-position: center;
     }
@@ -160,8 +162,7 @@ uiSignInVote = signInVoteDialog()
 uiSignInVote.setupUi(signInVote)
 
 condorcetBulletin = QtWidgets.QDialog()
-condorcetBulletin.setStyleSheet("""
-    .QDialog{
+condorcetBulletin.setStyleSheet(""".QDialog{
     background-image: url(biblio/ui/img/urnnne.jpg);
     background-position: center;
     }
@@ -170,9 +171,7 @@ uiCondorcetBulletin = condorcetBulletinDialog()
 uiCondorcetBulletin.setupUi(condorcetBulletin)
 
 jugMajBulletin = QtWidgets.QDialog()
-
-jugMajBulletin.setStyleSheet("""
-    .QDialog{
+jugMajBulletin.setStyleSheet(""".QDialog{
     background-image: url(biblio/ui/img/urnnne.jpg);
     background-position: center;
     }
@@ -181,8 +180,7 @@ uiJugMajBulletin = jugMajBulletinDialog()
 uiJugMajBulletin.setupUi(jugMajBulletin)
 
 confirmationVote = QtWidgets.QDialog()
-confirmationVote.setStyleSheet("""
-.QDialog{
+confirmationVote.setStyleSheet(""".QDialog{
     background-image: url(biblio/ui/img/validess.jpg);
     background-position: center;
     }
@@ -191,8 +189,7 @@ uiConfirmationVote = confirmationVoteDialog()
 uiConfirmationVote.setupUi(confirmationVote)
 
 results = QtWidgets.QDialog()
-results.setStyleSheet("""
-    .QDialog{
+results.setStyleSheet(""".QDialog{
     background-image: url(biblio/ui/img/validess.jpg);
     background-position: center;
     }

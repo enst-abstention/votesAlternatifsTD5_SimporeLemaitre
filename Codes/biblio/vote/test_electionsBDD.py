@@ -42,7 +42,7 @@ class TestElection(unittest.TestCase):
         """
         Vérifie si la fonction verif_elec retourne False quand l'électeur n'est pas dans la liste des électeurs (ici
         pour 1001) et True quand il y est (ici 48).
-        """cd 
+        """
         valide = self.presid.verif_elec(1019, "NJE95PBP7UC")
         invalide = self.presid.verif_elec(2000, "abcd")
         self.assertTrue(valide)
