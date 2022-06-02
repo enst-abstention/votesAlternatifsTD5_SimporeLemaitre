@@ -1,0 +1,7 @@
+
+
+ Vote Alternatif's documentation
+===========================================
+
+.. automodule:: electionsBDD
+	:members:

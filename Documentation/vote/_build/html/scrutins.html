@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>scrutins documentation &#8212; Votes Alternatifs  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="electionsBDD documentation" href="electionsBDD.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-scrutins">
+<span id="scrutins-documentation"></span><h1>scrutins documentation<a class="headerlink" href="#module-scrutins" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="scrutins.Condorcet">
+<em class="property">class </em><code class="sig-prename descclassname">scrutins.</code><code class="sig-name descname">Condorcet</code><span class="sig-paren">(</span><em class="sig-param">candidats</em><span class="sig-paren">)</span><a class="headerlink" href="#scrutins.Condorcet" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="scrutins.Condorcet.confrontation2">
+<code class="sig-name descname">confrontation2</code><span class="sig-paren">(</span><em class="sig-param">urne</em><span class="sig-paren">)</span><a class="headerlink" href="#scrutins.Condorcet.confrontation2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rassemble une liste de bulletins de vote dans une matrice de préférences.
+les “bulletins” devraient être une liste de bulletin, où
+chaque bulletin est une liste de classements.  Pour par exemple,
+s’il y a 3 candidats, chaque bulletin de vote doit être une liste de 3
+numéros correspondant aux candidats.  Les classements les plus petits sont</p>
+<blockquote>
+<div><p>meilleurs.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="scrutins.Condorcet.resultat">
+<code class="sig-name descname">resultat</code><span class="sig-paren">(</span><em class="sig-param">urne</em><span class="sig-paren">)</span><a class="headerlink" href="#scrutins.Condorcet.resultat" title="Permalink to this definition">¶</a></dt>
+<dd><p>On sera obligé de définir une méthode ‘resultat’ pour chaque classe</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scrutins.Condorcet.vainqueur_condorcet">
+<code class="sig-name descname">vainqueur_condorcet</code><span class="sig-paren">(</span><em class="sig-param">est_prefere</em><span class="sig-paren">)</span><a class="headerlink" href="#scrutins.Condorcet.vainqueur_condorcet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine le gagnant d’une election en utilisant la methode Schulze ( aussi appellé CSSD).
+‘candidats’ est de type liste et ‘estprefere’ un dictionnaire qui a pour cle la liste de candidat [i,j]
+et pour valeur un entier qui represente le nombre de voix du candidat</p>
+<blockquote>
+<div><p>i ou j prefere par les electeurs”.</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="scrutins.JugementMajoritaire">
+<em class="property">class </em><code class="sig-prename descclassname">scrutins.</code><code class="sig-name descname">JugementMajoritaire</code><span class="sig-paren">(</span><em class="sig-param">candidats</em><span class="sig-paren">)</span><a class="headerlink" href="#scrutins.JugementMajoritaire" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="scrutins.JugementMajoritaire.resultat">
+<code class="sig-name descname">resultat</code><span class="sig-paren">(</span><em class="sig-param">urne</em><span class="sig-paren">)</span><a class="headerlink" href="#scrutins.JugementMajoritaire.resultat" title="Permalink to this definition">¶</a></dt>
+<dd><p>On sera obligé de définir une méthode ‘resultat’ pour chaque classe</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="scrutins.JugementMajoritaire.resultats_candidat">
+<code class="sig-name descname">resultats_candidat</code><span class="sig-paren">(</span><em class="sig-param">urne</em><span class="sig-paren">)</span><a class="headerlink" href="#scrutins.JugementMajoritaire.resultats_candidat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compte les votes des candidats et par mention
+retourne un dictionnaire ayant pour cle les noms
+des candidats et pour valeur un tableau de vote</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="scrutins.Scrutin">
+<em class="property">class </em><code class="sig-prename descclassname">scrutins.</code><code class="sig-name descname">Scrutin</code><span class="sig-paren">(</span><em class="sig-param">candidats</em><span class="sig-paren">)</span><a class="headerlink" href="#scrutins.Scrutin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auteur : Sheick Simpore</p>
+<dl class="method">
+<dt id="scrutins.Scrutin.resultat">
+<em class="property">abstract </em><code class="sig-name descname">resultat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scrutins.Scrutin.resultat" title="Permalink to this definition">¶</a></dt>
+<dd><p>On sera obligé de définir une méthode ‘resultat’ pour chaque classe</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Votes Alternatifs</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="electionsBDD.html">electionsBDD documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">scrutins documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="electionsBDD.html" title="previous chapter">electionsBDD documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Sheick Jeremy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/scrutins.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

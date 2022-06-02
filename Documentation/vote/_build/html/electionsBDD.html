@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>electionsBDD documentation &#8212; Votes Alternatifs  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="scrutins documentation" href="scrutins.html" />
+    <link rel="prev" title="Welcome to Votes Alternatifs’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-electionsBDD">
+<span id="electionsbdd-documentation"></span><h1>electionsBDD documentation<a class="headerlink" href="#module-electionsBDD" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="electionsBDD.Bulletin">
+<em class="property">class </em><code class="sig-prename descclassname">electionsBDD.</code><code class="sig-name descname">Bulletin</code><span class="sig-paren">(</span><em class="sig-param">election</em>, <em class="sig-param">idElecteur</em>, <em class="sig-param">mdp</em>, <em class="sig-param">t=datetime.datetime(2022</em>, <em class="sig-param">6</em>, <em class="sig-param">1</em>, <em class="sig-param">23</em>, <em class="sig-param">35</em>, <em class="sig-param">22</em>, <em class="sig-param">28340)</em><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.Bulletin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auteur : Jérémy LEMAITRE
+Description : Représente le bulletin qu’un électeur rempli et dépose dans l’urne.</p>
+<dl class="method">
+<dt id="electionsBDD.Bulletin.completeBulletin">
+<code class="sig-name descname">completeBulletin</code><span class="sig-paren">(</span><em class="sig-param">candidat</em>, <em class="sig-param">vote</em><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.Bulletin.completeBulletin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auteur : Jérémy LEMAITRE</p>
+<p>Ajoute un candidat et le vote qui lui est associé au bulletin de l’électeur.</p>
+<dl>
+<dt>Parameters :</dt><dd><blockquote>
+<div><dl class="simple">
+<dt>candidat<span class="classifier">str</span></dt><dd><p>Nom du candidat</p>
+</dd>
+<dt>vote<span class="classifier">str or int</span></dt><dd><p>Vote qui lui a été associé</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="electionsBDD.Bulletin.estvalide">
+<code class="sig-name descname">estvalide</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.Bulletin.estvalide" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Vérifie que le bulletin remplit bien les conditions de validité de l’élection en procédant à plusieurs tests :</dt><dd><p>La date de dépôt du bulletin est bien comprise entre les dates de début et de fin d’élection.
+L’électeur est bien présent dans la base de données et a rentré le bon mot de passe.
+Les candidats renseignés sur le bulletin appartiennent bien à la liste des candidats.
+Les votes suivent bien le format défini par la méthode de vote.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool :</dt><dd><p>True si les conditions sont vérifiées</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="electionsBDD.Election">
+<em class="property">class </em><code class="sig-prename descclassname">electionsBDD.</code><code class="sig-name descname">Election</code><span class="sig-paren">(</span><em class="sig-param">nom</em>, <em class="sig-param">dates</em>, <em class="sig-param">electionBDD</em>, <em class="sig-param">mode</em><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.Election" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auteur : Jérémy LEMAITRE
+Description : La classe Election permet de définir une unique élection avec les
+paramètres et variables qui lui sont propre.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>nom<span class="classifier">str</span></dt><dd><p>Nom de l’élection.</p>
+</dd>
+<dt>dates<span class="classifier">tuple(datetime.datetime)</span></dt><dd><p>Date de début et de fin de l’élection.</p>
+</dd>
+<dt>electionBDD<span class="classifier">str</span></dt><dd><p>Nom de la base de données associée à l’élection. Celle-ci doit se trouver dans le dossier BDDs.</p>
+</dd>
+<dt>mode<span class="classifier">str</span></dt><dd><p>Nom du mode de scrutin utilisé.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="method">
+<dt id="electionsBDD.Election.depouillement">
+<code class="sig-name descname">depouillement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.Election.depouillement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Une fois que le vote est cloturé, cette fonction appelle la méthode resultat du mode de scrutin choisi. Par
+polymorphisme la méthode traite les bulletins en accord avec le mode de scrutin choisi.</p>
+<dl class="simple">
+<dt>vainqueur<span class="classifier">str</span></dt><dd><p>Le gagnant de l’élection ou les gagnants en cas d’égalité</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="electionsBDD.Election.remplissage_urne">
+<code class="sig-name descname">remplissage_urne</code><span class="sig-paren">(</span><em class="sig-param">bulletin</em><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.Election.remplissage_urne" title="Permalink to this definition">¶</a></dt>
+<dd><p>Permet simplement de placer un bulletin dans l’urne si celui-ci est valide. (Peut-être inutile)</p>
+<dl class="simple">
+<dt>bulletin<span class="classifier">dict</span></dt><dd><p>Le bulletin d’un électeur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="electionsBDD.Election.verif_elec">
+<code class="sig-name descname">verif_elec</code><span class="sig-paren">(</span><em class="sig-param">idE</em>, <em class="sig-param">mdp</em><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.Election.verif_elec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vérifie que si un électeur entré en paramètre est bien présent dans la liste électorale</p>
+<dl class="simple">
+<dt>electeur<span class="classifier">str</span></dt><dd><p>Identifiant de l’électeur considéré</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>True si l’électeur a le droit de voter, False sinon</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="electionsBDD.ListeElectorale">
+<em class="property">class </em><code class="sig-prename descclassname">electionsBDD.</code><code class="sig-name descname">ListeElectorale</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.ListeElectorale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auteur : Jérémy LEMAITRE</p>
+<p>Description : Permet la gestion de la base données liste électorale</p>
+<dl class="method">
+<dt id="electionsBDD.ListeElectorale.ajout_electeur">
+<code class="sig-name descname">ajout_electeur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.ListeElectorale.ajout_electeur" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auteur : Jérémy LEMAITRE</p>
+<p>Cette fonction n’est pas fonctionnelle.</p>
+<p>Entrer un nouvelle éléecteur dans la base de données.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="electionsBDD.generation_mdp">
+<code class="sig-prename descclassname">electionsBDD.</code><code class="sig-name descname">generation_mdp</code><span class="sig-paren">(</span><em class="sig-param">length</em><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.generation_mdp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auteur : Jérémy LEMAITRE</p>
+<p>Permet de créer un mot de passe, d’une longueur donnée et composé de caractères ascii, de chiffres et de signes de ponctuation.</p>
+<dl class="simple">
+<dt>Parameters :</dt><dd><dl class="simple">
+<dt>length<span class="classifier">int</span></dt><dd><p>Nombre de caractère du mot de passe.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns :</dt><dd><dl class="simple">
+<dt>mdp<span class="classifier">str</span></dt><dd><p>Mot de passe créé</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="electionsBDD.initEtat">
+<code class="sig-prename descclassname">electionsBDD.</code><code class="sig-name descname">initEtat</code><span class="sig-paren">(</span><em class="sig-param">bdd</em><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.initEtat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auteur : Jérémy LEMAITRE</p>
+<p>Permet d’indiquer, pour tout les candidats, qu’ils n’ont pas votés. Ceci est réaliser lors de la création de l’élection.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="electionsBDD.recupCandidats">
+<code class="sig-prename descclassname">electionsBDD.</code><code class="sig-name descname">recupCandidats</code><span class="sig-paren">(</span><em class="sig-param">bdd</em><span class="sig-paren">)</span><a class="headerlink" href="#electionsBDD.recupCandidats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auteur : Jérémy LEMAITRE</p>
+<p>Permet de récupérer la liste des candidats en se connectant à une base de données.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>bdd<span class="classifier">str</span></dt><dd><p>Nom de la base de données dont il faut récupérer les données.</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>candidatsList<span class="classifier">list(str)</span></dt><dd><p>Noms des candidats à l’élection.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Votes Alternatifs</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">electionsBDD documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrutins.html">scrutins documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Votes Alternatifs’s documentation!</a></li>
+      <li>Next: <a href="scrutins.html" title="next chapter">scrutins documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Sheick Jeremy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/electionsBDD.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
